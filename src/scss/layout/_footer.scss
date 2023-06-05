@@ -1,0 +1,102 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.footer {
+    background-color: v.$negro;
+    color: v.$blanco;
+    padding: 3rem 2rem 10rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    row-gap: 6rem;
+    border-top: .2rem solid v.$blanco;
+
+    @include m.laptop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contacto {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .marca {
+        text-align: center;
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        img {
+            max-width: 12rem;
+        }
+    }
+
+    .redes-sociales {
+        margin-top: 1rem;
+        display: flex;
+        gap: 3rem;
+        padding: 0;
+
+        .red {
+            max-width: 3rem;
+            transition: .2s;
+
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+
+    .menu {
+        order: -1;
+
+        @include m.laptop {
+            order: 3;
+        }
+
+        h3 {
+            margin: 2rem 0;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            a {
+                color: v.$blanco;
+
+                &:hover {
+                    border-bottom: solid .1rem v.$blanco;
+                }
+            }
+        }
+
+        .navegacion{
+            display: flex;
+            gap: 3rem;
+        }
+    }
+
+    .copy {
+        background-color: v.$blanco;
+        width: 100%;
+        color: v.$negro;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        padding: 1rem 0;
+
+        p {
+            font-size: 1.5rem;
+            margin: 0;
+
+        }
+    }
+}
+
+.logo-inferior {
+    filter: invert(100%);
+}

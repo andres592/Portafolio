@@ -1,0 +1,54 @@
+@use '../base/variables' as v;
+.contenedor{
+    width: 90%;
+    margin: 0 auto;
+}
+
+//botones
+
+.boton{
+    background-color: v.$negro;
+    color: v.$blanco;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 0 auto;
+    font-family: v.$subtitulo;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.5rem;
+    border: none;
+    transition: .5s;
+    cursor: pointer;
+    &:hover{
+        background-color: v.$celeste;
+    }
+}
+
+html{
+    min-width: 450px;
+}
+
+
+.centrado-columna{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.error, .bien{
+    background-color: v.$rojo;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem 0;
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.bien{
+    background-color: v.$verde;
+}

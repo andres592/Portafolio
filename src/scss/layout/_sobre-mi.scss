@@ -1,0 +1,29 @@
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+.sobre-mi {
+    padding: 10rem 0 5rem;
+    text-align: center;
+
+    .interno {
+        @include m.laptop {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 3rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            text-align: justify;
+            flex-basis: calc(44% - 1rem);
+        }
+
+        img {
+            max-width: 19rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            flex-basis: calc(75% - 1rem);
+        }
+    }
+}

@@ -1,0 +1,104 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.contenedor-servicios {
+    padding: 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        text-align: center;
+    }
+
+    .servicios {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+
+
+        @include m.laptop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .servicio {
+            margin-top: 3rem;
+            background-color: v.$negro;
+            border-radius: 10px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            min-height: 26.2rem;
+
+            h2,
+            p {
+                color: v.$blanco;
+            }
+
+            h2 {
+                display: flex;
+                font-size: 2.5rem;
+                align-items: center;
+
+                img {
+                    width: 5rem;
+                    margin-left: 2rem;
+                }
+            }
+
+            p {
+                margin: 2rem 0;
+            }
+
+            .boton {
+                background-color: v.$blanco;
+                color: v.$negro;
+            }
+
+            .boton:hover {
+                background-color: v.$negro;
+                color: v.$blanco;
+            }
+        }
+    }
+}
+
+.servicio::before {
+    content: "";
+    display: block;
+    width: 0%;
+    background-color: #46ddff9d;
+    height: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: .5s;
+}
+
+.servicio:hover::before {
+    width: 100%;
+}
+
+
+.btn-servicio {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // width: 12rem;
+    // height: 4rem;
+    //inset: 0;
+    //margin: auto;// para centrar pero tambien expande el elemento en todo el contenedor si no se le pone ancho y alto
+}
+
+.servicio:hover .btn-servicio {
+    display: block;
+}

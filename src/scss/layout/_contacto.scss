@@ -1,0 +1,94 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.main {
+    background-image: url("/webdev/src/scss/img/servicios-fondo-mobile.png");
+    background-position: center center;
+    background-size: cover;
+    padding: 8rem 0;
+    border-bottom: solid 2px;
+
+    @include m.laptop {
+        background-image: url("/webdev/src/scss/img/servicios-fondo.png");
+        background-position: top center;
+    }
+}
+
+.contacto {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include m.laptop {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    gap: 3rem;
+    align-items: center;
+
+    .formulario {
+
+        select {
+            padding: 1rem;
+            border-radius: .375rem;
+        }
+
+        input {
+            min-height: 5.5rem;
+            font-size: 1.8rem;
+        }
+
+        .boton {
+            margin-top: 4rem;
+
+            &:hover {
+                background-color: v.$celeste;
+                color: v.$blanco;
+            }
+        }
+
+        &-servicio {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            color: v.$blanco;
+        }
+    }
+
+    .ubicacion {
+        border-radius: 2%;
+        overflow: hidden;
+
+        iframe {
+            width: 100%;
+        }
+    }
+
+}
+
+fieldset {
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: v.$blanco;
+
+    .nombre {
+        flex-basis: calc(50% - 1rem);
+    }
+
+    .campo,
+    .cont-btn {
+        width: 100%;
+    }
+
+    .formulario-servicio label {
+        color: v.$negro;
+    }
+
+
+}
+
+.invertido{
+    filter: invert(100);
+}

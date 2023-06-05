@@ -1,0 +1,101 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.presentacion-dw{
+    padding: 4rem 0;
+    & > p{
+        text-align: center;
+    }
+
+    .cursor{
+        width: 0.4rem;
+        height: 5rem;
+        background-color: v.$negro;
+        display: inline-block;
+        animation: aparecer 1s infinite forwards;
+        @keyframes aparecer {
+                from{
+                    opacity: 0;
+                }
+
+                to{
+                    opacity: 1;
+                }
+        }
+
+    }
+
+    .titulo-dw{
+        text-align: center;
+        position: relative;
+        display: block;
+    }
+
+    .portal{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        gap:2rem;
+        padding: 3rem 0;
+        @include m.laptop{
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        .contenedor-imagen{
+            border: solid 1px #a3a3a3;
+            max-height: 40rem;
+            overflow: hidden;
+            position: relative;
+
+            img{
+                transition: 10s linear;
+            }
+            &:hover img{
+                transition: 10s linear;
+                transform: translateY(-85%);
+
+                @include m.tablet{
+                transform: translateY(-90%);
+                }
+
+                @include m.laptop{
+                transform: translateY(-88%);
+                }
+            }
+
+            &:hover button{
+                display: none;
+            }
+        }
+
+        button{
+            display: block;
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            border: solid 1px rgb(233, 232, 232);
+            background-image: url(/webdev/src/scss/img/dw/mano.png);
+            background-size:70%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            opacity: 80%;
+            animation: clic 1.5s infinite alternate ease-in-out;
+        }
+    }
+}
+
+@keyframes clic{
+    from{
+        transform: scale(.7);
+    }
+
+    to{
+        transform: scale(1);
+    }
+}
+

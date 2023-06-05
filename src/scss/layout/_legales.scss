@@ -1,0 +1,113 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.aviso {
+    padding: 2rem 0 4rem;
+
+    h1 {
+        text-align: center;
+        color: v.$celeste;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        color: v.$celeste;
+        margin-top: 4rem;
+        font-size: 2.1rem;
+    }
+}
+
+
+
+.cookies {
+    padding: 2rem 0 4rem;
+
+
+    h1 {
+        text-align: center;
+        color: #46DCFF;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        color: #46DCFF;
+        margin-top: 4rem;
+        font-size: 2.1rem;
+    }
+
+    h3 {
+        margin-top: 2rem;
+        color: #46DCFF;
+        font-size: 1.8rem;
+    }
+
+    h4 {
+        margin-top: 4rem;
+        color: #46DCFF;
+        font-size: 1.5rem;
+    }
+}
+
+
+
+.privacidad {
+    padding: 2rem 0 4rem;
+
+    h1 {
+        text-align: center;
+        color: #46DCFF;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        color: #46DCFF;
+        margin-top: 4rem;
+        font-size: 2.1rem;
+    }
+}
+
+
+.aviso-legal {
+    background-color: #46DCFF;
+    width: 100%;
+    @include m.laptop{
+    width: 30%;
+    }
+    padding: 2rem;
+    border-radius: 1rem;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    animation: aviso 1s 3s forwards ease-in-out;
+    opacity: 0;
+
+    h2{
+        color: white;
+    }
+
+    p{
+        border-radius: 1rem;
+        background-color: v.$blanco;
+        padding: 1rem;
+    }
+
+    @keyframes aviso {
+            0%{
+                opacity: 0;
+                transform: translateY(100%);
+            }
+
+            100%{
+                opacity: 1;
+                transform: translateY(0%);
+            }
+    }
+    .contenedor-btns{
+        display: flex;
+    }
+
+    .ocultar {
+        display: none;
+    }
+}
